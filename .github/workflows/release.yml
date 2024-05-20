@@ -182,7 +182,7 @@ jobs:
         run: |
           rustup update
           rustc --version
-      - uses: cargo-prebuilt/cargo-prebuilt-action@v3
+      - uses: cargo-prebuilt/cargo-prebuilt-action@v4
         with:
           pkgs: cargo-hack
       - uses: Swatinem/rust-cache@v2
@@ -230,7 +230,7 @@ jobs:
         run: |
           rustup update
           rustc --version
-      - uses: cargo-prebuilt/cargo-prebuilt-action@v3
+      - uses: cargo-prebuilt/cargo-prebuilt-action@v4
         with:
           pkgs: cargo-binstall
       - name: Install cargo-msrv
@@ -265,7 +265,7 @@ jobs:
         run: |
           rustup update
           rustc --version
-      - uses: cargo-prebuilt/cargo-prebuilt-action@v3
+      - uses: cargo-prebuilt/cargo-prebuilt-action@v4
         with:
           pkgs: cargo-deny
       - name: Cargo Deny
@@ -294,7 +294,7 @@ jobs:
         run: |
           rustup update
           rustc --version
-      - uses: cargo-prebuilt/cargo-prebuilt-action@v3
+      - uses: cargo-prebuilt/cargo-prebuilt-action@v4
         with:
           pkgs: cargo-audit
       - uses: Swatinem/rust-cache@v2
@@ -348,7 +348,7 @@ jobs:
     needs: [ check-fmt, clippy, cargo-hack, cargo-msrv, cargo-deny ]
     steps:
       - uses: actions/checkout@v4
-      - uses: cargo-prebuilt/cargo-prebuilt-action@v3
+      - uses: cargo-prebuilt/cargo-prebuilt-action@v4
         with:
           pkgs: coreutils
       - uses: Swatinem/rust-cache@v2
@@ -404,7 +404,7 @@ jobs:
           rustup update
           rustc --version
           rustup target add ${{ matrix.target }}
-      - uses: cargo-prebuilt/cargo-prebuilt-action@v3
+      - uses: cargo-prebuilt/cargo-prebuilt-action@v4
         with:
           pkgs: cross,coreutils
       - uses: Swatinem/rust-cache@v2
@@ -444,7 +444,7 @@ jobs:
           rustup update
           rustc --version
           rustup target add ${{ matrix.target }}
-      - uses: cargo-prebuilt/cargo-prebuilt-action@v3
+      - uses: cargo-prebuilt/cargo-prebuilt-action@v4
         with:
           pkgs: cargo-auditable,coreutils
       - uses: Swatinem/rust-cache@v2
@@ -483,7 +483,7 @@ jobs:
           rustup update
           rustc --version
           rustup target add ${{ matrix.target }}
-      - uses: cargo-prebuilt/cargo-prebuilt-action@v3
+      - uses: cargo-prebuilt/cargo-prebuilt-action@v4
         with:
           pkgs: cargo-auditable,coreutils
       - uses: Swatinem/rust-cache@v2
